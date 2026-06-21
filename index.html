@@ -119,7 +119,7 @@
 
     #home {
       background: transparent;
-      padding: 32px 56px 28px;
+      padding: 28px 56px 24px;
       max-width: 100%;
       margin: 0;
       display: grid;
@@ -689,15 +689,18 @@
     }
 
     .social-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
       background: var(--green-pale);
-      border-radius: var(--radius-pill);
-      padding: 8px 16px;
-      font-size: 13px;
-      color: var(--green);
-      transition: background 0.2s;
+      border-radius: 50%;
+      transition: background 0.2s, transform 0.2s;
     }
 
-    .social-pill:hover { background: #c2ddc6; }
+    .social-pill:hover { background: #c2ddc6; transform: translateY(-2px); }
+    .social-pill svg { display: block; }
 
     .footer-col h4 {
       font-size: 13px;
@@ -792,6 +795,7 @@
       margin-top: 16px;
       text-align: center;
       justify-content: center;
+      color: var(--white) !important;
     }
 
     /* ── TABLET (≤ 900px) ── */
@@ -823,6 +827,7 @@
       .shop-grid          { grid-template-columns: 1fr; gap: 40px; }
 
       .footer-inner       { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-brand       { grid-column: span 2; }
     }
 
     /* ── MOBILE (≤ 480px) ── */
@@ -851,7 +856,8 @@
 
       .shop-steps .step   { flex-direction: column; }
 
-      .footer-inner       { grid-template-columns: 1fr; gap: 28px; }
+      .footer-inner       { grid-template-columns: 1fr; gap: 24px; }
+      .footer-brand       { grid-column: span 1; }
       .footer-col h4      { margin-bottom: 10px; }
 
       .hero-ctas          { gap: 10px; }
@@ -905,10 +911,6 @@
         <p class="hero-body">
           Zero stress, straight to cooking. Premium Nigerian flour blends — cassava, yam, plantain, beans and brown rice — crafted for every kitchen, every family.
         </p>
-        <div class="hero-ctas">
-          <a href="https://famtimefood.bumpa.shop" target="_blank" class="btn btn-green">Shop Online</a>
-          <a href="https://wa.me/2348092839468" target="_blank" class="btn btn-gold">Order on WhatsApp</a>
-        </div>
       </div>
     </div>
   </section>
@@ -1170,9 +1172,27 @@
         <img src="logo.PNG" alt="Famtime Food" style="height:62px; width:auto; background:#ffffff; border-radius:6px; display:block; margin-bottom:10px;" />
         <p>Healthy food, to nurture life. Zero stress, straight to cooking. Proudly produced in Nigeria.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/famtimefood" target="_blank" class="social-pill">Instagram</a>
-          <a href="https://wa.me/2348092839468" target="_blank" class="social-pill">WhatsApp</a>
-          <a href="https://linktr.ee/famtimefood" target="_blank" class="social-pill">Linktree</a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/famtimefood" target="_blank" class="social-pill" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4D2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="#1B4D2A" stroke="none"/>
+            </svg>
+          </a>
+          <!-- WhatsApp -->
+          <a href="https://wa.me/2348092839468" target="_blank" class="social-pill" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#1B4D2A">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.985-1.407A9.945 9.945 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.946 7.946 0 0 1-4.073-1.117l-.292-.174-3.027.854.815-2.968-.19-.305A7.96 7.96 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/>
+            </svg>
+          </a>
+          <!-- Linktree -->
+          <a href="https://linktr.ee/famtimefood" target="_blank" class="social-pill" aria-label="Linktree">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#1B4D2A">
+              <path d="M13.51 5.3l3.4-3.4 1.42 1.42-3.4 3.4H19v2h-4.07l3.4 3.4-1.42 1.42L13 9.6l-3.91 3.94-1.42-1.42 3.4-3.4H7v-2h4.09L7.69 3.32l1.42-1.42 3.4 3.4zM11 15h2v7h-2z"/>
+            </svg>
+          </a>
         </div>
       </div>
       <div class="footer-col">
