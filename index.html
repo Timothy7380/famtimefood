@@ -240,7 +240,32 @@
       text-transform: uppercase;
       color: var(--green-light);
       margin-bottom: 12px;
+      display: inline-block;
+      position: relative;
+      cursor: default;
     }
+
+    @keyframes dashSlide {
+      0%   { width: 0;    opacity: 0; }
+      20%  { width: 28px; opacity: 1; }
+      60%  { width: 100%; opacity: 1; }
+      85%  { width: 100%; opacity: 1; }
+      100% { width: 0;    opacity: 0; }
+    }
+
+    .section-label::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 2px;
+      width: 0;
+      background: var(--gold-light);
+      border-radius: 2px;
+      animation: dashSlide 2.8s ease-in-out infinite;
+    }
+
+    #shop .section-label::after { background: var(--gold-light); }
 
     .section-headline {
       font-family: var(--font-display);
